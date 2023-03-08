@@ -1,49 +1,34 @@
 #include "lists.h"
 
-listint_t *create_node(int n);
-
 /**
- * insert_node - inserts a node sorted in a linked list of ints
- * @head: double pointer to head of LL, needed for modification in edge
- * cases
- * @number: data for new node
- *
- * Return: pointer to newly created node, NULL on failure
+ * insert_node - Inserts a number into a sorted singly-linked list.
+ * @head: A pointer the head of the linked list.
+ * @number: The number to insert.
+ * Return: If the function fails - NULL.
+ *         Otherwise - a pointer to the new node.
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *cur_node = NULL, *new_node = NULL;
+	listint_t *node = *head, *new;
 
-	if (!head)
+	new = malloc(sizeof(listint_t));
+
+	if (new == NULL)
 		return (NULL);
-	else if (!(*head))
+	new->n = number;
+
+	if (node == NULL || node->n >= number)
 	{
-		new_node = create_node(number);
-		*head = new_node;
-		return (new_node);
+		new->next = node;
+		*head = new;
+		return (new);
 	}
-	cur_node = *head;
-	while (cur_node)
-	{
-		/* need to insert at head */
-		if (cur_node->n >= number)
-		{
-			new_node = create_node(number);
-			new_node->next = cur_node;
-			*head = new_node;
-			return (new_node);
-		}
-		else if (cur_node->n <= number)
-		{
-			if (!cur_node->next || cur_node->next->n >= number)
-			{
-				new_node = create_node(number);
-				new_node->next = cur_node->next;
-				cur_node->next = new_node;
-				return (cur_node->next);
-			}
-		}
-		cur_node = cur_node->next;
-	}
-	return (NULL); /* failed */
+
+	while (node && node->next && node->next->n < number)
+		node = node->next;
+
+	new->next = node->next;
+	node->next = new;
+	return (new);
+
 }
