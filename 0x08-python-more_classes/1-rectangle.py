@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" module that creates a rectangle and initializes its features """
+
 
 class Rectangle:
     """
