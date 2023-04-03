@@ -79,4 +79,3 @@ class Rectangle:
         """Returns a string representation of the rectangle"""
         return "Rectangle({}, {})".format(self.width, self.height)
 
-
