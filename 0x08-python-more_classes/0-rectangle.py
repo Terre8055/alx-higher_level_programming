@@ -3,6 +3,9 @@
 
 
 class Rectangle:
-    """  pass """
+    """
+    This class is empty and does nothing
+
+    """
     pass
 
