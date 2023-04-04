@@ -1,0 +1,122 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(1,2)
+3
+>>> add_integer(1.0, 2.1)
+3
+>>> add_integer(0)
+98
+>>> add_integer(45, 24)
+69
+>>> add_integer(1)
+99
+>>> add_integer(.1)
+98
+>>> add_integer(-1,1)
+0
+#passing in a negative integer for b
+>>> add_integer(5, -7)
+-2
+
+#passing in a float value for b
+>>> add_integer(5, 2.5)
+7
+
+#passing in a negative float value for a
+>>> add_integer(-5.5, 10)
+4
+
+#passing in a large integer for a and b
+>>> add_integer(999999999, 888888888)
+1888888887
+
+#passing in a very small integer for a and b
+>>> add_integer(1, -2)
+-1
+
+#passing in a very large float value for a and b
+>>> add_integer(1e100, 1e99)
+10100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+#passing in a very small float value for a and b
+>>> add_integer(1e-100, 1e-99)
+0
+
+#passing in a very large negative float value for a and b
+>>> add_integer(-1e100, -1e99)
+-10100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+#passing in a very small negative float value for a and b
+>>> add_integer(-1e-100, -1e-99)
+0
+
+#passing in a boolean value for a
+>>> add_integer(True, 5)
+6
+
+#passing in a boolean value for b
+>>> add_integer(10, False)
+10
+
+
+
+
+""" ERRORS """
+
+#pass in not int, a string
+>>> add_integer("poo", 2)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+
+#pass in not int, a list
+>>> add_integer([1], {})
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+
+#pass in a string for b
+>>> add_integer(5, "hi")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+
+#pass in nothing
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+
+#converting float infinititties to int errors 
+>>> add_integer(float('inf'), 2)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+
+#converting float NaN to int errors
+>>> add_integer(float('NaN'), 2)
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
+
+#passing in a None value for b
+>>> add_integer(5, None)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+#passing in a complex number for a
+>>> add_integer(2 + 3j, 5)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+#passing in a complex number for b
+>>> add_integer(5, 2 + 3j)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
