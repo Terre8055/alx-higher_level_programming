@@ -12,12 +12,7 @@ class Rectangle:
     Attributes:
         width (int): The width of the rectangle.
         height (int): The height of the rectangle.
-        number_of_instances (int): The number of instances of the rectangle.
-        print_symbol (any): The symbol used for printing the rectangle.
-
-    Raises:
-        TypeError: If either the width or height are not integers.
-        ValueError: If either the width or height are negative.
+        number_of_instances (int): The number of instances of
 
     """
 
