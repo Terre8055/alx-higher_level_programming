@@ -3,12 +3,7 @@
 This module defines a Rectangle class that inherits from the Base class.
 """
 
-import io
-import sys
-import unittest
 from models.base import Base
-from models.rectangle import Rectangle
-
 
 
 class Rectangle(Base):
@@ -23,13 +18,13 @@ class Rectangle(Base):
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
-            x (int, optional): The x-coordinate of the rectangle
-            y (int, optional): The y-coordinate of the rectangle
-            id (int, optional): The ID of the rectangle
+            x (int, optional): The x-coordinate of the rectangle (default is 0).
+            y (int, optional): The y-coordinate of the rectangle (default is 0).
+            id (int, optional): The ID of the rectangle (default is None).
 
         Raises:
             TypeError: If either width or height is not an int.
-            ValueError: If either width or height is less than 0
+            ValueError: If either width or height is less than or equal to 0.
             TypeError: If either x or y is not an int.
             ValueError: If either x or y is less than 0.
         """
