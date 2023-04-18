@@ -12,9 +12,9 @@ class Square(Rectangle):
 
         Args:
             size (int): The size of the new Square.
-            x (int, optional): The x coordinate of the new Square. Defaults to 0.
-            y (int, optional): The y coordinate of the new Square. Defaults to 0.
-            id (int, optional): The identity of the new Square. Defaults to None.
+            x (int, optional): The x coordinate of the new Square.
+            y (int, optional): The y coordinate of the new Square.
+            id (int, optional): The identity of the new Square.
         """
         super().__init__(size, size, x, y, id)
 

@@ -33,13 +33,13 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """
-        Return the JSON serialization of a list of dictionaries.
+        Return the JSON serialization of a list of dicts.
 
         Args:
-            list_dictionaries (list): A list of dictionaries.
+            list_dictionaries (list): A list of dicts.
 
         Returns:
-            str: A JSON string representation of the given list of dictionaries.
+            str: A JSON string representation of the given list of dicts.
         """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
@@ -67,10 +67,10 @@ class Base:
         Return the deserialization of a JSON string.
 
         Args:
-            json_string (str): A JSON string representation of a list of dictionaries.
+            json_string (str): A JSON string representation of a list of dicts.
 
         Returns:
-            list: A list of Python dictionaries represented by the given JSON string.
+            list: A list of Python dictionaries represented by JSON.
         """
         if json_string is None or json_string == "[]":
             return []
