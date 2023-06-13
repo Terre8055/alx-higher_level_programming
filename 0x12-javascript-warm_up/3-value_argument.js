@@ -2,8 +2,8 @@
 
 const { argv } = require('node:process');
 
-if (argv.length <= 2) {
-  console.log('No Argument');
-} else {
+if (argv[2]) {
   console.log(argv[2]);
+} else {
+  console.log('No Argument');
 }
