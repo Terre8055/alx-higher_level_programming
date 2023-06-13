@@ -1,15 +1,17 @@
 #!/usr/bin/node
 
-const argv = require('process').argv;
+const argv = require('process').argv
 
-const argTwo = Number(argv[2]);
+const argTwo = Number(argv[2])
+
+if (isNaN(argTwo))console.log('MIssing size')
 
 if (!isNaN(argTwo)) {
   for (let i = 0; i < argTwo; i++) {
-    let line = '';
+    let line = ''
     for (let y = 0; y < argTwo; y++) {
-      line += 'x';
+      line += 'x'
     }
-    console.log(line);
+    console.log(line)
   }
 }
