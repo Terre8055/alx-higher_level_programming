@@ -4,7 +4,7 @@ const argv = require('process').argv
 
 const argTwo = Number(argv[2])
 
-if (isNaN(argTwo))console.log('MIssing size')
+if (isNaN(argTwo))console.log('Missing size')
 
 if (!isNaN(argTwo)) {
   for (let i = 0; i < argTwo; i++) {
