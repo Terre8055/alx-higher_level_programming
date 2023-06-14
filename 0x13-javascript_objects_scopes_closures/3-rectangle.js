@@ -3,20 +3,20 @@
 module.exports = class Rectangle {
   constructor (w, h) {
     if (w < 1 || h < 1) {
-      return null;
+      return null
     } else {
-      this.width = w;
-      this.height = h;
+      this.width = w
+      this.height = h
     }
   }
 
   print () {
     for (let i = 0; i < this.height; i++) {
-      let line = '';
+      let line = ''
       for (let j = 0; j < this.width; j++) {
-        line += 'x';
+        line += 'X'
       }
-      console.log(line);
+      console.log(line)
     }
   }
-};
+}
